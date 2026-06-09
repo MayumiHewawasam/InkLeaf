@@ -1,62 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InkLeaf | Buy the Book</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="bg-glow glow-1"></div>
     <div class="bg-glow glow-2"></div>
 
     <nav class="navbar glass">
-        <a href="index.html" class="logo">InkLeaf<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="synopsis.html">Synopsis</a></li>
-            <li><a href="author.html">Author</a></li>
-            <li><a href="buy.html" class="btn-sm active">Get the Book</a></li>
-        </ul>
-    </nav>
-
-    <section class="section" style="text-align: center;">
-        <h2 style="margin-bottom: 3rem;">Secure Your Copy</h2>
-        
-        <div class="buy-cards">
-            <div class="card glass">
-                <h3>Digital Edition</h3>
-                <div class="price">$19<span>.99</span></div>
-                <p>Perfect for reading on the go.</p>
-                <ul>
-                    <li>✓ ePub and PDF formats</li>
-                    <li>✓ Immediate download</li>
-                    <li>✓ Lifetime updates</li>
+        <div class="navbar-row">
+            <a href="index.html" class="logo">InkLeaf<span>.</span></a>
+            <div class="nav-right">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="synopsis.html">Synopsis</a></li>
+                    <li><a href="author.html">Author</a></li>
+                    <li><a href="buy.html" class="active">Products</a></li>
                 </ul>
-                <button class="btn-secondary" style="width: 100%; margin-top: 1rem;">Buy Digital</button>
-            </div>
-            
-            <div class="card glass popular">
-                <div class="popular-badge">Most Popular</div>
-                <h3>Hardcover Bundle</h3>
-                <div class="price">$39<span>.99</span></div>
-                <p>The ultimate collector's experience.</p>
-                <ul>
-                    <li>✓ Premium Hardcover book</li>
-                    <li>✓ All digital formats included</li>
-                    <li>✓ Exclusive video course access</li>
-                    <li>✓ Signed by author</li>
-                </ul>
-                <button class="btn-primary" style="width: 100%; margin-top: 1rem;">Buy Bundle</button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <section class="section buy-section">
+
+        <div class="buy-layout">
+
+            <!-- Left Menu Box -->
+            <aside class="book-menu glass">
+                <div class="book-menu-search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input type="text" id="book-search" placeholder="Search books..." autocomplete="off">
+                </div>
+                <h3 class="book-menu-title">Our Books</h3>
+                <ul class="book-menu-list">
+                    <li class="book-menu-item active" data-target="diary-card">
+                        <span class="book-menu-icon">📓</span>
+                        <div>
+                            <p class="book-menu-name">Daily Reminder Diary</p>
+                            <p class="book-menu-price">$9.19</p>
+                        </div>
+                    </li>
+                    <li class="book-menu-item" data-target="paperback-card">
+                        <span class="book-menu-icon">📖</span>
+                        <div>
+                            <p class="book-menu-name">Unlock Your Potential</p>
+                            <p class="book-menu-price">$14.99</p>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Right Cards -->
+            <div class="buy-main">
+                <h2 style="margin-bottom: 2rem;">Secure Your Copy</h2>
+                <div class="buy-cards">
+
+                    <!-- Diary Card -->
+                    <div class="card diary-card" id="diary-card">
+                        <div class="card-img-wrap">
+                            <img src="assets/Daily Reminder.jpg" alt="Diary">
+                            <span class="card-badge">Daily Journal</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-category">PERSONAL JOURNAL</p>
+                            <h3 class="card-title">Daily Reminder Diary</h3>
+                            <hr class="card-divider">
+                            <div class="card-bottom">
+                                <span class="card-price">$9.19</span>
+                                <div class="card-stars">★★★★★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Paperback Book Card -->
+                    <div class="card paperback-card" id="paperback-card">
+                        <div class="card-img-wrap">
+                            <img src="assets/book.png" alt="Paperback Book">
+                            <span class="card-badge">New</span>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-category">PAPERBACK BOOK</p>
+                            <h3 class="card-title">Unlock Your Potential</h3>
+                            <hr class="card-divider">
+                            <div class="card-bottom">
+                                <span class="card-price">$14.99</span>
+                                <div class="card-stars">★★★★☆</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </section>
+
+    <!-- ==================== MODAL (Click කළාම විවෘත වෙන Popup) ==================== -->
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-col">
-                <a href="index.html" class="logo" style="margin-bottom: 1rem; display: block; color: white;">InkLeaf<span style="color: var(--accent-secondary);">.</span></a>
+                <a href="index.html" class="logo"
+                    style="margin-bottom: 1rem; display: block; color: white;">InkLeaf<span
+                        style="color: var(--accent-secondary);">.</span></a>
                 <p>Empowering readers with transformative literature and actionable mental models.</p>
             </div>
             <div class="footer-col">
@@ -81,5 +149,9 @@
             &copy; 2026 InkLeaf Publishing. All rights reserved.
         </div>
     </footer>
+
+    <script src="buy.js"></script>
+    <script src="navbar.js"></script>
 </body>
+
 </html>
